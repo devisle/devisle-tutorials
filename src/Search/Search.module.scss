@@ -13,6 +13,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  color: white;
 
   input {
     height: 25px;
@@ -29,6 +30,7 @@
   align-items: flex-start;
   height: auto;
   width: 500px;
+  background-color: white;
   border: 1px solid lightgray;
   margin: 20px 0px;
   padding: 20px;
@@ -39,13 +41,20 @@
     border: 1px solid rgb(160, 160, 160);
   }
 
-  span,
-  p {
-    padding: 0;
+  h4 {
+    padding: 2px;
     margin: 0;
   }
 
   p {
-    font-size: 10px;
+    font-size: 12px;
+    padding: 2px;
+    margin: 0;
+  }
+
+  span {
+    font-size: 12px;
+    padding: 2px;
+    margin: 0;
   }
 }

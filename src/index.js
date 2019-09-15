@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 ReactDOM.render(
   <Router>
     <Switch>
-      <Route exact path="/tutorial/:name" component={Renderer} />
+      <Route exact path="/tutorial/:fileName" component={Renderer} />
       <Route exact path="/" component={Search} />
       <Route component={NoMatch} />
     </Switch>

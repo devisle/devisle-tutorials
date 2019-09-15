@@ -1,8 +1,8 @@
 export const Catalog = [
   {
-    title: "Destructuring in Javascript",
-    description: "Learn how to destructure arrays and objects",
+    title: "Arguments",
+    description: "Clear function arguments",
     category: "Javascript",
-    urlPath: "js_destructuring"
+    fileName: "js-arguments"
   }
 ];

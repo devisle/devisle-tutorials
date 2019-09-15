@@ -9,7 +9,7 @@ const Search = props => {
   return (
     <div className={styles.Container}>
       <section className={styles.Search}>
-        <h2>Dev Isle Tutorials</h2>
+        <h2>Clean Code</h2>
         <input
           onChange={e => setSearch(e.target.value)}
           value={search}
@@ -20,14 +20,15 @@ const Search = props => {
         {Catalog &&
           Catalog.filter(item =>
             item.title.toLowerCase().includes(search.toLowerCase())
-          ).map(({ title, description, urlPath }, index) => (
+          ).map(({ title, description, category, fileName }, index) => (
             <div
               key={index}
               className={styles.SearchResult}
-              onClick={() => props.history.push(`/tutorial/${urlPath}`)}
+              onClick={() => props.history.push(`/tutorial/${fileName}`)}
             >
-              <span>{title}</span>
+              <h4>{title}</h4>
               <p>{description}</p>
+              <span>{category}</span>
             </div>
           ))}
       </section>

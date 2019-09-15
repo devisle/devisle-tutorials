@@ -1,0 +1,48 @@
+.Container {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: auto;
+
+  span {
+    margin: 0 5px;
+    padding: 0;
+  }
+}
+
+.Return {
+  position: sticky;
+  top: 0;
+  width: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: white;
+}
+
+.Renderer {
+  padding: 20px;
+  width: 50%;
+  height: auto;
+  background-color: rgb(245, 245, 245);
+}
+
+.New {
+  position: sticky;
+  width: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  top: 0;
+  width: 25%;
+  color: white;
+
+  span {
+    margin: 0 5px;
+    padding: 0;
+  }
+}
