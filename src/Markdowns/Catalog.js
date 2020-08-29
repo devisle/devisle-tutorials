@@ -1,8 +1,8 @@
 export const Catalog = [
   {
-    title: "Arguments",
-    description: "Clear function arguments",
-    category: "Javascript",
-    fileName: "js-arguments"
-  }
+    title: "Code Craftsmanship",
+    description: "Three simple rules to become a better code craftsman",
+    category: "Crafstmanship",
+    fileName: "code-craftsmanship",
+  },
 ];

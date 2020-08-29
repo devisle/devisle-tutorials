@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import Markdown from "markdown-to-jsx";
 import marked from "marked";
 import { Icon } from "react-icons-kit";
-import { plus } from "react-icons-kit/fa/plus";
 import { arrowLeft } from "react-icons-kit/fa/arrowLeft";
 import styles from "./Renderer.module.scss";
 
@@ -12,7 +11,7 @@ class Renderer extends Component {
     super(props);
 
     this.state = {
-      markdown: ""
+      markdown: "",
     };
   }
 
@@ -23,12 +22,12 @@ class Renderer extends Component {
       const readmePath = require(`../Markdowns/${fileName}.md`);
 
       fetch(readmePath)
-        .then(response => {
+        .then((response) => {
           return response.text();
         })
-        .then(text => {
+        .then((text) => {
           this.setState({
-            markdown: marked(text)
+            markdown: marked(text),
           });
         });
     } catch {
@@ -40,16 +39,15 @@ class Renderer extends Component {
     return (
       <div className={styles.Container}>
         <section className={styles.Return}>
-          <Icon size={21} icon={arrowLeft} />
-          <span>Go Back</span>
+          <Link to="/">
+            <Icon size={18} icon={arrowLeft} />
+            <span>Go Back</span>
+          </Link>
         </section>
         <section className={styles.Renderer}>
           <Markdown>{this.state.markdown}</Markdown>
         </section>
-        <section className={styles.New}>
-          <Icon size={21} icon={plus} />
-          <span>Create New</span>
-        </section>
+        <section className={styles.New}>Discord Login Coming Soon</section>
       </div>
     );
   }

@@ -15,6 +15,12 @@
   align-items: center;
   color: white;
 
+  a {
+    color: white;
+    margin-bottom: 10px;
+    margin-bottom: 40px;
+  }
+
   input {
     height: 25px;
     width: 400px;
@@ -56,5 +62,35 @@
     font-size: 12px;
     padding: 2px;
     margin: 0;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .Container {
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .Search {
+    padding: 10px;
+    box-sizing: border-box;
+
+    input {
+      height: 50px;
+      box-sizing: border-box;
+      width: 100%;
+    }
+  }
+
+  .SearchList {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+
+    .SearchResult {
+      width: 100%;
+      box-sizing: border-box;
+    }
   }
 }

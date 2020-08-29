@@ -14,13 +14,21 @@
 
 .Return {
   position: sticky;
-  top: 0;
+  top: 25px;
   width: 25%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  color: white;
+
+  a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .Renderer {
@@ -32,17 +40,51 @@
 
 .New {
   position: sticky;
-  width: 25%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  top: 0;
+  top: 25px;
   width: 25%;
   color: white;
+  cursor: default;
 
-  span {
-    margin: 0 5px;
-    padding: 0;
+  a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .Container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Return {
+    position: relative;
+    height: 50px;
+    width: 100%;
+  }
+
+  .Renderer {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+    background-color: rgb(245, 245, 245);
+    margin: 20px 0px;
+  }
+
+  .New {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    justify-content: flex-start;
   }
 }
