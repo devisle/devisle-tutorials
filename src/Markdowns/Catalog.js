@@ -5,4 +5,10 @@ export const Catalog = [
     category: "Crafstmanship",
     fileName: "code-craftsmanship",
   },
+  {
+    title: "10x Developers",
+    description: "10x Developer attributes, road to success",
+    category: "Crafstmanship",
+    fileName: "10x-developer",
+  },
 ];
