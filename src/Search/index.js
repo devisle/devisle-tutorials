@@ -14,6 +14,9 @@ const Search = (props) => {
         <Link to="/new">
           <span>How to submit a new tutorial!</span>
         </Link>
+        <Link to="/editor">
+          <span>Write a tutorial in the preview</span>
+        </Link>
         <input
           onChange={(e) => setSearch(e.target.value)}
           value={search}
@@ -32,7 +35,7 @@ const Search = (props) => {
             >
               <h4>{title}</h4>
               <p>{description}</p>
-              <span>{category}</span>
+              <span>Category: {category}</span>
             </div>
           ))}
       </section>
