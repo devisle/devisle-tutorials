@@ -13,11 +13,11 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  color: white;
+  color: black;
   margin-bottom: 20px;
 
   a {
-    color: white;
+    color: black;
     margin-bottom: 10px;
   }
 
@@ -27,6 +27,17 @@
     width: 400px;
     font-size: 16px;
     padding: 10px 10px;
+  }
+}
+
+.DarkMode {
+  color: white;
+
+  a,
+  p,
+  h4,
+  span {
+    color: white;
   }
 }
 
@@ -43,6 +54,7 @@
   padding: 20px;
   border-radius: 5px;
   box-shadow: 5px 5px 5px rgba(247, 247, 247, 0.158);
+  color: black;
 
   &:hover {
     cursor: pointer;
@@ -54,18 +66,21 @@
   h4 {
     padding: 2px;
     margin: 0;
+    color: black;
   }
 
   p {
     font-size: 12px;
     padding: 2px;
     margin: 0;
+    color: black;
   }
 
   span {
     font-size: 12px;
     padding: 2px;
     margin: 10px 0px;
+    color: black;
   }
 }
 

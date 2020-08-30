@@ -3,7 +3,9 @@ import { withRouter, Link } from "react-router-dom";
 import Markdown from "markdown-to-jsx";
 import { Icon } from "react-icons-kit";
 import { arrowLeft } from "react-icons-kit/fa/arrowLeft";
+import { ApplicationConsumer } from "../AppContext";
 import styles from "./Renderer.module.scss";
+import ThemeChanger from "../ThemeChanger";
 
 class Renderer extends Component {
   constructor(props) {
@@ -36,27 +38,50 @@ class Renderer extends Component {
 
   render() {
     return (
-      <div className={styles.Container}>
-        <section className={styles.Return}>
-          <Link to="/">
-            <Icon size={18} icon={arrowLeft} />
-            <span>Go Back</span>
-          </Link>
-        </section>
-        <section className={styles.Renderer}>
-          <Markdown
-            options={{
-              namedCodesToUnicode: {
-                le: "\u2264",
-                ge: "\u2265",
-              },
-            }}
-          >
-            {this.state.markdown}
-          </Markdown>
-        </section>
-        <section className={styles.New}>Discord Login Coming Soon</section>
-      </div>
+      <ApplicationConsumer>
+        {({ darkMode }) => (
+          <div className={styles.Container}>
+            <section
+              className={
+                darkMode
+                  ? `${styles.Return} ${styles.DarkMode}`
+                  : `${styles.Return}`
+              }
+            >
+              <Link to="/">
+                <Icon size={18} icon={arrowLeft} />
+                <span>Go Back</span>
+              </Link>
+              <ThemeChanger />
+            </section>
+            <section
+              className={
+                darkMode
+                  ? `${styles.Renderer} ${styles.DarkModeRenderer}`
+                  : `${styles.Renderer}`
+              }
+            >
+              <Markdown
+                options={{
+                  namedCodesToUnicode: {
+                    le: "\u2264",
+                    ge: "\u2265",
+                  },
+                }}
+              >
+                {this.state.markdown}
+              </Markdown>
+            </section>
+            <section
+              className={
+                darkMode ? `${styles.New} ${styles.DarkMode}` : `${styles.New}`
+              }
+            >
+              <span>Discord Login Coming Soon</span>
+            </section>
+          </div>
+        )}
+      </ApplicationConsumer>
     );
   }
 }

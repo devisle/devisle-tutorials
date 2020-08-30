@@ -1,0 +1,19 @@
+$bg-dark-mode: #000;
+$grey-dark-mode: rgba(66, 66, 66, 0.712);
+$white-text: #fff;
+$primary: rgb(0, 132, 255);
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body.dark-mode {
+  background-color: $bg-dark-mode;
+  color: $white-text;
+}
