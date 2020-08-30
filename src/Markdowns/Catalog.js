@@ -11,4 +11,11 @@ export const Catalog = [
     category: "Crafstmanship",
     fileName: "10x-developer",
   },
+  {
+    title: "Setting up NVM",
+    description:
+      "NVM for Node Version Manager, allows you to have multiple node versions on the same machine",
+    category: "Node",
+    fileName: "nvm-setup",
+  },
 ];
