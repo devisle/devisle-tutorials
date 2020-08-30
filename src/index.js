@@ -5,12 +5,14 @@ import Search from "./Search";
 import Renderer from "./Renderer";
 import NoMatch from "./NoMatch";
 import NewSubmissions from "./NewSubmissions";
+import Editor from "./Editor";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 ReactDOM.render(
   <Router>
     <Switch>
+      <Route exact path="/editor" component={Editor} />
       <Route exact path="/new" component={NewSubmissions} />
       <Route exact path="/tutorial/:fileName" component={Renderer} />
       <Route exact path="/" component={Search} />

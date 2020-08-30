@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { withRouter, Link } from "react-router-dom";
 import Markdown from "markdown-to-jsx";
-import marked from "marked";
 import { Icon } from "react-icons-kit";
 import { arrowLeft } from "react-icons-kit/fa/arrowLeft";
 import styles from "./Renderer.module.scss";
@@ -27,7 +26,7 @@ class Renderer extends Component {
         })
         .then((text) => {
           this.setState({
-            markdown: marked(text),
+            markdown: text,
           });
         });
     } catch {
@@ -45,7 +44,16 @@ class Renderer extends Component {
           </Link>
         </section>
         <section className={styles.Renderer}>
-          <Markdown>{this.state.markdown}</Markdown>
+          <Markdown
+            options={{
+              namedCodesToUnicode: {
+                le: "\u2264",
+                ge: "\u2265",
+              },
+            }}
+          >
+            {this.state.markdown}
+          </Markdown>
         </section>
         <section className={styles.New}>Discord Login Coming Soon</section>
       </div>
