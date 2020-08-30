@@ -5,7 +5,7 @@
 
 .Menu {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
   padding: 20px;
@@ -14,7 +14,9 @@
   box-sizing: border-box;
 
   a {
-    color: white;
+    color: black;
+    margin-right: 20px;
+    text-decoration: none;
   }
 }
 
@@ -32,6 +34,8 @@
   height: 90%;
 
   textarea {
+    border: 1px solid black;
+    background: rgb(241, 241, 241);
     box-sizing: border-box;
     padding: 20px;
     font-size: 16px;
@@ -47,11 +51,30 @@
   max-height: 90%;
   display: flex;
   justify-content: flex-start;
-  background: white;
+  border: 1px solid black;
+  background: rgb(241, 241, 241);
   align-items: flex-start;
   padding: 10px 30px;
   box-sizing: border-box;
   overflow-y: auto;
+}
+
+.DarkMode {
+  a {
+    color: white;
+  }
+}
+
+.EditorDarkMode {
+  textarea {
+    background-color: rgb(43, 43, 43);
+    color: white;
+  }
+}
+
+.PreviewDarkMode {
+  background-color: rgb(43, 43, 43);
+  color: white;
 }
 
 @media only screen and (max-width: 600px) {

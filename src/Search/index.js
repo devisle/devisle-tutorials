@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Catalog } from "../Markdowns/Catalog";
 import { withRouter, Link } from "react-router-dom";
 import ThemeMode from "../ThemeChanger";
-import { ApplicationConsumer, ApplicationContext } from "../AppContext";
+import { ApplicationConsumer } from "../AppContext";
 import styles from "./Search.module.scss";
 
 const Search = (props) => {

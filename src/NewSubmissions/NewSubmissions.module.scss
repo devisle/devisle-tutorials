@@ -4,7 +4,20 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  width: 100%;
+  color: black;
+  margin: 20px 10px;
+
+  h4 {
+    text-align: center;
+  }
+
+  a {
+    color: black;
+    margin-bottom: 20px;
+  }
+}
+
+.DarkMode {
   color: white;
 
   a {
