@@ -2,6 +2,9 @@ import React from "react";
 
 export const ApplicationContext = React.createContext({
   darkMode: false,
+  username: "",
+  authenticated: false,
+  loginMessage: "",
   updateContext: () => {},
 });
 
