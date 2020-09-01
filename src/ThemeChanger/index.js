@@ -1,4 +1,7 @@
 import React, { useEffect, useContext } from "react";
+import { Icon } from "react-icons-kit";
+import { chart_1_2 } from 'react-icons-kit/ikons/chart_1_2'
+import styles from "./ThemeChanger.module.scss";
 import { ApplicationConsumer, ApplicationContext } from "../AppContext";
 
 const ThemeChanger = () => {
@@ -22,9 +25,7 @@ const ThemeChanger = () => {
     <ApplicationConsumer>
       {({ darkMode }) => (
         <div>
-          <button onClick={handleChange}>
-            {darkMode ? "Light Mode" : "Dark Mode"}
-          </button>
+          <Icon className={styles.chart_1_2} icon={chart_1_2} size={22} onClick={handleChange} />
         </div>
       )}
     </ApplicationConsumer>
