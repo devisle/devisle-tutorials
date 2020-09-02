@@ -18,4 +18,30 @@ export const Catalog = [
     category: "Node",
     fileName: "nvm-setup",
   },
+  {
+    title: "Javascript V8 Engine",
+    description: "What is a Javascript Engine, what is the V8 engine",
+    category: "Javascript",
+    fileName: "javascript-engine",
+  },
+  {
+    title: "What is Babel and Typescript?",
+    description:
+      "We explain in a few words what babel does and what typescript is",
+    category: "Javascript",
+    fileName: "what-is-babel-typescript",
+  },
+  {
+    title: "Optimized V8 code",
+    description: "What does the V8 engine like and dislike",
+    category: "Javascript",
+    fileName: "optimized-v8-code",
+  },
+  {
+    title: "Callstack and Memory Heap",
+    description:
+      "How does JS keep track of what to run and how does it allocate memory",
+    category: "Javascript",
+    fileName: "callstack-memory-heap",
+  },
 ];
