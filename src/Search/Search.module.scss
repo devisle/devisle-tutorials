@@ -6,6 +6,54 @@
   align-items: center;
   width: 100%;
   height: 100vh;
+  box-sizing: border-box;
+}
+
+.Menu {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+
+  .MenuLeft {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+
+    a {
+      font-weight: bold;
+      margin-right: 20px;
+      text-decoration: none;
+
+      &:hover {
+        border-bottom: 2px solid black;
+      }
+    }
+  }
+
+  .MenuRight {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+
+    .GitBanner {
+      margin-left: 100px;
+    }
+
+    span {
+      font-weight: bold;
+      margin-left: 20px;
+      cursor: default;
+    }
+  }
 }
 
 .Search {
@@ -15,6 +63,8 @@
   align-items: center;
   color: black;
   margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
 
   a {
     color: black;
@@ -25,7 +75,7 @@
   input {
     margin-top: 20px;
     height: 25px;
-    width: 400px;
+    width: 520px;
     font-size: 16px;
     padding: 10px 10px;
   }
@@ -85,11 +135,40 @@
   }
 }
 
+.SearchResultDark {
+  background-color: rgb(224, 224, 224);
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: none;
+    background: darkgray;
+    border: 1px solid rgb(160, 160, 160);
+  }
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .Container {
     padding: 10px;
     box-sizing: border-box;
+  }
+
+  .Menu {
+    flex-direction: column-reverse;
+    height: 100px;
+    font-size: 10px;
+
+    .MenuLeft,
+    .MenuRight {
+      justify-content: flex-start;
+      width: 100%;
+
+      a,
+      span {
+        width: auto;
+        margin: 5px;
+      }
+    }
   }
 
   .Search {

@@ -14,6 +14,7 @@ body {
 }
 
 body.dark-mode {
+  filter: grayscale(0%);
   background-color: $bg-dark-mode;
   color: $white-text;
 }
