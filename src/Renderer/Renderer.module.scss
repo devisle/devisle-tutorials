@@ -32,6 +32,28 @@
   }
 }
 
+.Stats {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  .StatsVote {
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .StatsLikes {
+    margin-right: 10px;
+  }
+
+  .StatsVote {
+    margin-right: 10px;
+  }
+}
+
 .Renderer {
   padding: 20px;
   width: 50%;

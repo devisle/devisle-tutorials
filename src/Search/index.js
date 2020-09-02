@@ -2,15 +2,18 @@ import React, { useState } from "react";
 import { Catalog } from "../Markdowns/Catalog";
 import { withRouter, Link } from "react-router-dom";
 import ThemeMode from "../ThemeChanger";
+import withAuth from "../withAuth";
 import { ApplicationConsumer } from "../AppContext";
 import styles from "./Search.module.scss";
+
+const DISCORD_URL = process.env.REACT_APP_DISCORD;
 
 const Search = (props) => {
   const [search, setSearch] = useState("");
 
   return (
     <ApplicationConsumer>
-      {({ darkMode }) => (
+      {({ darkMode, username, authenticated, loginMessage }) => (
         <div className={styles.Container}>
           <section
             className={
@@ -21,6 +24,13 @@ const Search = (props) => {
           >
             <ThemeMode />
             <h2>Dev Isle Coding Tutorials</h2>
+            {authenticated ? (
+              <span>Logged in as {username}</span>
+            ) : (
+              <a href={DISCORD_URL}>
+                <span>{loginMessage}</span>
+              </a>
+            )}
             <h3>Simple, quick and honest guides.</h3>
             <a
               href="https://discord.gg/Mr9qMSJ"
@@ -67,4 +77,4 @@ const Search = (props) => {
   );
 };
 
-export default withRouter(Search);
+export default withAuth(withRouter(Search));

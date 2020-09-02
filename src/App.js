@@ -13,6 +13,9 @@ class App extends Component {
     super();
     this.state = {
       darkMode: false,
+      username: "",
+      authenticated: false,
+      loginMessage: "Login with Discord",
       updateContext: this.updateContext,
     };
   }
@@ -31,23 +34,6 @@ class App extends Component {
       });
     }
   };
-
-  //  useEffect(() => {
-  //   const getTheme = localStorage.getItem("Theme");
-  //   if (getTheme === "dark") {
-  //     setThemeState(true);
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   if (themeState) {
-  //     localStorage.setItem("Theme", "dark");
-  //     document.body.classList.add("dark-mode");
-  //   } else {
-  //     localStorage.setItem("Theme", "light");
-  //     document.body.classList.remove("dark-mode");
-  //   }
-  // }, [themeState]);
 
   render() {
     return (
