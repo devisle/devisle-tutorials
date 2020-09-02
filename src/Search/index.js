@@ -5,6 +5,7 @@ import ThemeMode from "../ThemeChanger";
 import withAuth from "../withAuth";
 import { ApplicationConsumer } from "../AppContext";
 import styles from "./Search.module.scss";
+import GithubCorner from "react-github-corner";
 
 const DISCORD_URL = process.env.REACT_APP_DISCORD;
 
@@ -22,29 +23,42 @@ const Search = (props) => {
                 : `${styles.Search}`
             }
           >
-            <ThemeMode />
+            <div className={styles.Menu}>
+              <div className={styles.MenuLeft}>
+                <a
+                  href="https://discord.gg/Mr9qMSJ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Discord
+                </a>
+                <Link to="/new">
+                  <span>New Submissions</span>
+                </Link>
+                <Link to="/editor">
+                  <span>Preview Editor</span>
+                </Link>
+              </div>
+              <div className={styles.MenuRight}>
+                <ThemeMode />
+                {authenticated ? (
+                  <span>Logged in as {username}</span>
+                ) : (
+                  <a href={DISCORD_URL}>
+                    <span>{loginMessage}</span>
+                  </a>
+                )}
+                <GithubCorner
+                  className={styles.GitBanner}
+                  octoColor={darkMode ? "#151513" : "#fff"}
+                  bannerColor={darkMode ? "#fff" : "#151513"}
+                  size={120}
+                  href="https://github.com/devisle/devisle-tutorials"
+                />
+              </div>
+            </div>
             <h2>Dev Isle Coding Tutorials</h2>
-            {authenticated ? (
-              <span>Logged in as {username}</span>
-            ) : (
-              <a href={DISCORD_URL}>
-                <span>{loginMessage}</span>
-              </a>
-            )}
             <h3>Simple, quick and honest guides.</h3>
-            <a
-              href="https://discord.gg/Mr9qMSJ"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Join the discord!
-            </a>
-            <Link to="/new">
-              <span>How to submit a new tutorial!</span>
-            </Link>
-            <Link to="/editor">
-              <span>Write a tutorial in the preview</span>
-            </Link>
             <input
               onChange={(e) => setSearch(e.target.value)}
               value={search}
@@ -60,7 +74,7 @@ const Search = (props) => {
                   key={index}
                   className={
                     darkMode
-                      ? `${styles.SearchResult} ${styles.DarkMode}`
+                      ? `${styles.SearchResult} ${styles.SearchResultDark}`
                       : `${styles.SearchResult}`
                   }
                   onClick={() => props.history.push(`/tutorial/${fileName}`)}
