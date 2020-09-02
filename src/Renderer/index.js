@@ -35,16 +35,15 @@ class Renderer extends Component {
           return response.text();
         })
         .then((text) => {
+          this.setState({
+            markdown: text,
+          });
+
           contentViews(fileName).then((result) => {
             if (result.data && result.status === 200) {
               this.setState({
-                markdown: text,
                 likes: result.data.totalLikes,
                 views: result.data.totalViews,
-              });
-            } else {
-              this.setState({
-                markdown: text,
               });
             }
           });
