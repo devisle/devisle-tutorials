@@ -91,19 +91,25 @@ class Renderer extends Component {
               }
             >
               <div className={styles.Stats}>
-                {authenticated && (
-                  <div
-                    className={styles.StatsVote}
-                    onClick={() => this.likeOrDislike()}
-                  >
-                    <Icon icon={starO} size={24} />
-                  </div>
-                )}
-                <div className={styles.StatsLikes}>
-                  Likes: {this.state.likes}
+                <div className={styles.StatsLeft}>
+                  <div>{this.props.location.state.author}</div>
+                  <div>{this.props.location.state.category}</div>
                 </div>
-                <div className={styles.StatsViews}>
-                  Views: {this.state.views}
+                <div className={styles.StatsRight}>
+                  {authenticated && (
+                    <div
+                      className={styles.StatsVote}
+                      onClick={() => this.likeOrDislike()}
+                    >
+                      <Icon icon={starO} size={24} />
+                    </div>
+                  )}
+                  <div className={styles.StatsLikes}>
+                    Likes: {this.state.likes}
+                  </div>
+                  <div className={styles.StatsViews}>
+                    Views: {this.state.views}
+                  </div>
                 </div>
               </div>
               <Markdown

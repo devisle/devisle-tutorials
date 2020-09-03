@@ -7,7 +7,9 @@
   color: black;
   margin: 20px 10px;
 
-  h4 {
+  h4,
+  h5 {
+    width: 50%;
     text-align: center;
   }
 
@@ -17,10 +19,41 @@
   }
 }
 
+.Menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+  height: 20px;
+  width: 100%;
+  box-sizing: border-box;
+
+  a {
+    color: black;
+    margin-right: 20px;
+    text-decoration: none;
+  }
+
+  span {
+    margin-left: 10px;
+  }
+}
+
 .DarkMode {
   color: white;
 
   a {
     color: white;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .NewSubmissions {
+    h4,
+    h5 {
+      width: 80%;
+      text-align: center;
+    }
   }
 }
