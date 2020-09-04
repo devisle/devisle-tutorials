@@ -40,17 +40,37 @@
   justify-content: flex-end;
   align-items: center;
 
-  .StatsVote {
-    cursor: pointer;
-    margin-right: 10px;
+  .StatsLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 50%;
+
+    div {
+      margin-bottom: 10px;
+    }
   }
 
-  .StatsLikes {
-    margin-right: 10px;
-  }
+  .StatsRight {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
 
-  .StatsVote {
-    margin-right: 10px;
+    .StatsVote {
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .StatsLikes {
+      margin-right: 10px;
+    }
+
+    .StatsVote {
+      margin-right: 10px;
+    }
   }
 }
 
@@ -100,6 +120,18 @@
   .Container {
     display: flex;
     flex-direction: column;
+  }
+
+  .Stats {
+    flex-direction: column;
+
+    .StatsLeft,
+    .StatsRight {
+      width: 100%;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin: 20px 0px;
+    }
   }
 
   .Return {

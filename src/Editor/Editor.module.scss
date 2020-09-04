@@ -9,7 +9,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   padding: 20px;
-  height: 20px;
+  height: 10vh;
   width: 100%;
   box-sizing: border-box;
 
@@ -17,6 +17,10 @@
     color: black;
     margin-right: 20px;
     text-decoration: none;
+  }
+
+  span {
+    margin-left: 10px;
   }
 }
 
