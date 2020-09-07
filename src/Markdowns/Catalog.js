@@ -64,4 +64,15 @@ export const Catalog = {
       author: "Natedeploys",
     },
   ],
+  Python: [
+  { 
+      title: "Introduction To Discord.py",
+      description:
+      "A small Introduction to Discord.py",
+      category: "Python",
+      fileName: "introduction-to-discord-py",
+      author: "Raghav Mrituanjaya",
+
+  },
+  ],
 };
