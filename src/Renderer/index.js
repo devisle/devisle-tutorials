@@ -3,6 +3,8 @@ import { withRouter, Link } from "react-router-dom";
 import Markdown from "markdown-to-jsx";
 import { Icon } from "react-icons-kit";
 import { arrowLeft } from "react-icons-kit/fa/arrowLeft";
+import { ic_keyboard_arrow_right } from "react-icons-kit/md/ic_keyboard_arrow_right";
+import { ic_keyboard_arrow_left } from "react-icons-kit/md/ic_keyboard_arrow_left";
 import { ApplicationConsumer } from "../AppContext";
 import { starO } from "react-icons-kit/fa/starO";
 import likeDislikeContent from "../APIs/likeDislikeContent";
@@ -10,6 +12,7 @@ import contentViews from "../APIs/contentViews";
 import withAuth from "../withAuth";
 import styles from "./Renderer.module.scss";
 import ThemeChanger from "../ThemeChanger";
+import { Catalog } from "../Markdowns/Catalog";
 
 const DISCORD_URL = process.env.REACT_APP_DISCORD;
 
@@ -21,12 +24,33 @@ class Renderer extends Component {
       markdown: "",
       likes: 0,
       views: 0,
+      author: "",
+      category: "",
+      nextTutorial: "",
+      previousTutorial: "",
     };
   }
 
-  componentDidMount() {
-    const { fileName } = this.props.match.params;
+  retrieveCatalogDetails = (fileName) => {
+    Object.keys(Catalog).forEach((key) => {
+      Catalog[key].forEach((tutorial, index) => {
+        if (tutorial.fileName === fileName) {
+          this.setState({
+            author: tutorial.author,
+            category: tutorial.category,
+            nextTutorial: Catalog[key][index + 1]
+              ? Catalog[key][index + 1].fileName
+              : "",
+            previousTutorial: Catalog[key][index - 1]
+              ? Catalog[key][index - 1].fileName
+              : "",
+          });
+        }
+      });
+    });
+  };
 
+  retrieveMarkdown = (fileName) => {
     try {
       const readmePath = require(`../Markdowns/${fileName}.md`);
 
@@ -50,6 +74,20 @@ class Renderer extends Component {
         });
     } catch {
       this.props.history.push("/");
+    }
+  };
+
+  componentDidMount() {
+    const { fileName } = this.props.match.params;
+    this.retrieveCatalogDetails(fileName);
+    this.retrieveMarkdown(fileName);
+  }
+
+  componentDidUpdate(prevProps) {
+    const { fileName } = this.props.match.params;
+    if (prevProps.location.pathname !== this.props.location.pathname) {
+      this.retrieveCatalogDetails(fileName);
+      this.retrieveMarkdown(fileName);
     }
   }
 
@@ -92,8 +130,8 @@ class Renderer extends Component {
             >
               <div className={styles.Stats}>
                 <div className={styles.StatsLeft}>
-                  <div>{this.props.location.state.author}</div>
-                  <div>{this.props.location.state.category}</div>
+                  <div>{this.state.author}</div>
+                  <div>{this.state.category}</div>
                 </div>
                 <div className={styles.StatsRight}>
                   {authenticated && (
@@ -122,6 +160,26 @@ class Renderer extends Component {
               >
                 {this.state.markdown}
               </Markdown>
+              <div
+                className={
+                  darkMode
+                    ? `${styles.TutorialLinks} ${styles.DarkMode}`
+                    : `${styles.TutorialLinks}`
+                }
+              >
+                {this.state.previousTutorial && (
+                  <Link to={`/tutorial/${this.state.previousTutorial}`}>
+                    <Icon icon={ic_keyboard_arrow_left} />
+                    <span>Previous Tutorial</span>
+                  </Link>
+                )}
+                {this.state.nextTutorial && (
+                  <Link to={`/tutorial/${this.state.nextTutorial}`}>
+                    <span>Next Tutorial</span>
+                    <Icon icon={ic_keyboard_arrow_right} />
+                  </Link>
+                )}
+              </div>
             </section>
             <section
               className={

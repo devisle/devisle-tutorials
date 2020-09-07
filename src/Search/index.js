@@ -98,7 +98,6 @@ const Search = (props) => {
                             onClick={() =>
                               props.history.push({
                                 pathname: `/tutorial/${fileName}`,
-                                state: { author, category },
                               })
                             }
                           >

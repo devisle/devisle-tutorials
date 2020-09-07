@@ -1,3 +1,19 @@
+/**
+ * All fields are required:
+ *
+ * title - The title of the tutorial as it should appear to readers
+ * description - The description as it will appear in main page
+ * category - The category of the tutorial as it should appear to readers
+ * fileName - The markdown file without the .md, super important to get right
+ * author - The author of the tutorial as it should appear to readers
+ *
+ * How to use:
+ *
+ * Each category is a key in Catalog
+ * The order of the tutorials are their placement in the category array
+ * This will affect the previous and next tutorial links at the tutorial page
+ */
+
 export const Catalog = {
   Craftsmanship: [
     {
@@ -65,14 +81,12 @@ export const Catalog = {
     },
   ],
   Python: [
-  { 
+    {
       title: "Introduction To Discord.py",
-      description:
-      "A small Introduction to Discord.py",
+      description: "A small Introduction to Discord.py",
       category: "Python",
       fileName: "introduction-to-discord-py",
       author: "Raghav Mrituanjaya",
-
-  },
+    },
   ],
 };
