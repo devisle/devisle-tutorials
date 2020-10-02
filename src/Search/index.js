@@ -23,19 +23,20 @@ const Search = (props) => {
                 : `${styles.Search}`
             }
           >
-            <div className={styles.Menu}>
+            <nav className={styles.Menu}>
               <div className={styles.MenuLeft}>
                 <a
                   href="https://discord.gg/Mr9qMSJ"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Discord server invitation"
                 >
                   Discord
                 </a>
-                <Link to="/new">
+                <Link to="/new" aria-label="New submissions">
                   <span>New Submissions</span>
                 </Link>
-                <Link to="/editor">
+                <Link to="/editor" aria-label="Preview editor">
                   <span>Preview Editor</span>
                 </Link>
               </div>
@@ -44,8 +45,8 @@ const Search = (props) => {
                 {authenticated ? (
                   <span>Logged in as {username}</span>
                 ) : (
-                  <a href={DISCORD_URL}>
-                    <span>{loginMessage}</span>
+                  <a href={DISCORD_URL} aria-label="Discord login">
+                    <span className={styles.Under}>{loginMessage}</span>
                   </a>
                 )}
                 <GithubCorner
@@ -56,9 +57,9 @@ const Search = (props) => {
                   href="https://github.com/devisle/devisle-tutorials"
                 />
               </div>
-            </div>
-            <h2>Dev Isle Tutorials</h2>
-            <h3>Simple, quick and honest guides.</h3>
+            </nav>
+            <h1 className={styles.Search}>Dev Isle Tutorials</h1>
+            <h2 className={styles.Search}>Simple, quick and honest guides.</h2>
             <input
               onChange={(e) => setSearch(e.target.value)}
               value={search}
@@ -69,8 +70,8 @@ const Search = (props) => {
             {Catalog &&
               Object.keys(Catalog).map((key, index) => {
                 return (
-                  <div key={index}>
-                    <div
+                  <div key={index} className={styles.categorySearch}>
+                    <h3
                       className={
                         darkMode
                           ? `${styles.Category} ${styles.CategoryDark}`
@@ -78,7 +79,7 @@ const Search = (props) => {
                       }
                     >
                       {`// ` + key}
-                    </div>
+                    </h3>
                     {Catalog[key]
                       .filter((item) =>
                         item.title.toLowerCase().includes(search.toLowerCase())
@@ -103,7 +104,7 @@ const Search = (props) => {
                           >
                             <h4>{title}</h4>
                             <p>{description}</p>
-                            <span>Category: {category}</span>
+                            <p>Category: {category}</p>
                             {author && <p>Author: {author}</p>}
                           </div>
                         )

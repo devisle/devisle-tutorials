@@ -1,3 +1,13 @@
+h1.NoMatchHeading {
+  font-size: 1.5em;
+}
+h2.NoMatchHeading {
+  font-size: 1em;
+}
+h3.NoMatchHeading {
+  font-size: 0.83em;
+}
+
 .NoMatch {
   display: flex;
   flex-direction: column;
@@ -11,4 +21,9 @@
 
 .DarkMode {
   color: white;
+}
+
+a {
+  color: black;
+  margin-bottom: 20px;
 }

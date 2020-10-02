@@ -1,3 +1,16 @@
+h1.Submissions {
+  font-size: 1.5em;
+}
+h2.Submissions {
+  font-size: 1em;
+}
+h3.Submissions {
+  font-size: 0.83em;
+}
+h4.Submissions {
+  font-size: 0.83em;
+}
+
 .NewSubmissions {
   display: flex;
   flex-direction: column;
@@ -5,10 +18,10 @@
   justify-content: center;
   height: 100vh;
   color: black;
-  margin: 20px 10px;
 
-  h4,
-  h5 {
+  h2.Submissions,
+  h3.Submissions,
+  h4.Submissions {
     width: 50%;
     text-align: center;
   }
@@ -50,8 +63,9 @@
 
 @media only screen and (max-width: 600px) {
   .NewSubmissions {
-    h4,
-    h5 {
+    h2.Submissions,
+    h3.Submissions,
+    h4.Submissions {
       width: 80%;
       text-align: center;
     }

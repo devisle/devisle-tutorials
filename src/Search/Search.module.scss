@@ -48,12 +48,21 @@
       margin-left: 100px;
     }
 
-    span {
+    span.Under {
       font-weight: bold;
       margin-left: 20px;
       cursor: default;
+      text-decoration: underline;
     }
   }
+}
+
+h1.Search {
+  font-size: 1.5em;
+}
+
+h2.Search {
+  font-size: 1.17em;
 }
 
 .Search {
@@ -62,7 +71,6 @@
   justify-content: flex-start;
   align-items: center;
   color: black;
-  margin-bottom: 20px;
   width: 100%;
   box-sizing: border-box;
 
@@ -111,7 +119,7 @@
   width: 500px;
   background-color: white;
   border: 1px solid lightgray;
-  margin: 20px 0px;
+  margin: 20px 0;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 5px 5px 5px rgba(247, 247, 247, 0.158);
@@ -125,22 +133,14 @@
   }
 
   h4 {
-    padding: 2px;
     margin: 0;
     color: black;
   }
 
   p {
     font-size: 12px;
-    padding: 2px;
     margin: 0;
-    color: black;
-  }
-
-  span {
-    font-size: 12px;
-    padding: 2px;
-    margin: 10px 0px;
+    padding: 6px 0;
     color: black;
   }
 }

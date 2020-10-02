@@ -25,7 +25,7 @@ const ThemeChanger = () => {
     <ApplicationConsumer>
       {({ darkMode }) => (
         <div>
-          <Icon className={styles.chart_1_2} icon={chart_1_2} size={22} onClick={handleChange} />
+          <Icon className={styles.chart_1_2} icon={chart_1_2} size={22} onClick={handleChange} aria-label="Theme changer" />
         </div>
       )}
     </ApplicationConsumer>
