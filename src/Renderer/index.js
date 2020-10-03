@@ -115,7 +115,7 @@ class Renderer extends Component {
                   : `${styles.Return}`
               }
             >
-              <Link to="/">
+              <Link to="/" aria-label="Go back to the homepage">
                 <Icon size={18} icon={arrowLeft} />
                 <span>Go Back</span>
               </Link>
@@ -130,24 +130,24 @@ class Renderer extends Component {
             >
               <div className={styles.Stats}>
                 <div className={styles.StatsLeft}>
-                  <div>{this.state.author}</div>
-                  <div>{this.state.category}</div>
+                  <p>{this.state.author}</p>
+                  <p>{this.state.category}</p>
                 </div>
                 <div className={styles.StatsRight}>
                   {authenticated && (
-                    <div
+                    <p
                       className={styles.StatsVote}
                       onClick={() => this.likeOrDislike()}
                     >
                       <Icon icon={starO} size={24} />
-                    </div>
+                    </p>
                   )}
-                  <div className={styles.StatsLikes}>
+                  <p className={styles.StatsLikes}>
                     Likes: {this.state.likes}
-                  </div>
-                  <div className={styles.StatsViews}>
+                  </p>
+                  <p className={styles.StatsViews}>
                     Views: {this.state.views}
-                  </div>
+                  </p>
                 </div>
               </div>
               <Markdown
@@ -168,13 +168,13 @@ class Renderer extends Component {
                 }
               >
                 {this.state.previousTutorial && (
-                  <Link to={`/tutorial/${this.state.previousTutorial}`}>
+                  <Link to={`/tutorial/${this.state.previousTutorial}`} aria-label="Get to the previous tutorial">
                     <Icon icon={ic_keyboard_arrow_left} />
                     <span>Previous Tutorial</span>
                   </Link>
                 )}
                 {this.state.nextTutorial && (
-                  <Link to={`/tutorial/${this.state.nextTutorial}`}>
+                  <Link to={`/tutorial/${this.state.nextTutorial}`} aria-label="Get to the next tutorial">
                     <span>Next Tutorial</span>
                     <Icon icon={ic_keyboard_arrow_right} />
                   </Link>
@@ -189,7 +189,7 @@ class Renderer extends Component {
               {authenticated ? (
                 <span>Logged in as {username}</span>
               ) : (
-                <a href={DISCORD_URL}>
+                <a href={DISCORD_URL} aria-label="Discord login">
                   <span>{loginMessage}</span>
                 </a>
               )}

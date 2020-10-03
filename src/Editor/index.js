@@ -20,7 +20,7 @@ const Editor = () => {
               darkMode ? `${styles.Menu} ${styles.DarkMode}` : `${styles.Menu}`
             }
           >
-            <Link to="/">
+            <Link to="/" aria-label="Go back to the homepage">
               <Icon size={18} icon={arrowLeft} />
               <span>Go Back</span>
             </Link>
