@@ -37,6 +37,13 @@ export const Catalog = {
       fileName: "10x-developer",
       author: "Natedeploys",
     },
+    {
+      title: "The difference between statically and dynamically typed",
+      description: "The difference between statically and dynamically typed and also strongly typed and weakly typed",
+      category: "Crafstmanship",
+      fileName: "difference-between-statically-and-dynamically-typed",
+      author: "Endormi",
+    },
   ],
   Node: [
     {
