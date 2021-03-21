@@ -19,23 +19,30 @@ export const Catalog = {
     {
       title: "Evolve your Developer Game",
       description: "Software Developer/Engineer: Starting out and Evolving",
-      category: "Crafstmanship",
+      category: "Craftsmanship",
       fileName: "evolve-developer",
       author: "Shreyas Balachandran",
     },
     {
       title: "Code Craftsmanship",
       description: "Three simple rules to become a better code craftsman",
-      category: "Crafstmanship",
+      category: "Craftsmanship",
       fileName: "code-craftsmanship",
       author: "Natedeploys",
     },
     {
       title: "10x Developers",
       description: "10x Developer attributes, road to success",
-      category: "Crafstmanship",
+      category: "Craftsmanship",
       fileName: "10x-developer",
       author: "Natedeploys",
+    },
+    {
+      title: "Difference between statically and dynamically typed",
+      description: "Difference between statically and dynamically typed and also strongly typed and weakly typed",
+      category: "Craftsmanship",
+      fileName: "difference-between-statically-and-dynamically-typed",
+      author: "Endormi",
     },
   ],
   Node: [
