@@ -38,8 +38,8 @@ export const Catalog = {
       author: "Natedeploys",
     },
     {
-      title: "The difference between statically and dynamically typed",
-      description: "The difference between statically and dynamically typed and also strongly typed and weakly typed",
+      title: "Difference between statically and dynamically typed",
+      description: "Difference between statically and dynamically typed and also strongly typed and weakly typed",
       category: "Craftsmanship",
       fileName: "difference-between-statically-and-dynamically-typed",
       author: "Endormi",

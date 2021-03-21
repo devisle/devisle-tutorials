@@ -10,12 +10,30 @@ It's because statically typing is associated with the variable rather than the v
 
 Examples of Statically typed languages: C, C++ and Java.
 
+A quick example of statically typed:
+
+```Java
+int a = 1;
+a = "foo";
+```
+
+This causes an error, because a is supposed to be an integer only.
+
 ## Dynamically Typed
 
 Dynamically typed languages do the type checking at run-time which brings some performance cost.
 In dynamically typed languages variables are dynamic, meaning you can change the value after you set the variable to a type.
 
 Examples of Dynamically typed: Python, JavaScript, Ruby and scripting languages.
+
+A quick example of dynamically typed:
+
+```python
+a = 1
+a = "foo"
+```
+
+However doesn't give an error.
 
 ### Strongly typed
 
